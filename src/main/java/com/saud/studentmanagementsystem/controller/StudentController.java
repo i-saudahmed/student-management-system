@@ -1,9 +1,12 @@
 package com.saud.studentmanagementsystem.controller;
 
+import com.saud.studentmanagementsystem.entity.Student;
 import com.saud.studentmanagementsystem.service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class StudentController {
@@ -21,4 +24,19 @@ public class StudentController {
         model.addAttribute("students", studentService.getAllStudents());
         return "students";
     }
+
+    @GetMapping("/students/new")
+    public String createStudentForm(Model model) {
+        Student student = new Student();
+        model.addAttribute("student", student);
+        return "create_student";
+    }
+
+    @PostMapping("/students")
+//    "Spring auto BINDS form data into student object"
+    public String saveStudent(@ModelAttribute("student") Student student) {
+        studentService.saveStudent(student);
+        return "redirect:/students";
+    }
+
 }
