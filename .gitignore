@@ -31,3 +31,24 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Java/Maven
+*.class
+*.log
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IDE/restart/sensitive
+.restart
+.env
+*.env
+hs_err_pid*
+
+

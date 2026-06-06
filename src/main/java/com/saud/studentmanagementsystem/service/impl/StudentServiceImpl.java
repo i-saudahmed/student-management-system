@@ -37,4 +37,9 @@ public class StudentServiceImpl implements StudentService {
     public Student updateStudent(Student student) {
         return studentRespoitory.save(student);
     }
+
+    @Override
+    public void deleteStudentById(Long id) {
+        studentRespoitory.deleteById(id);
+    }
 }
