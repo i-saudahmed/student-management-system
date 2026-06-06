@@ -2,7 +2,6 @@ package com.saud.studentmanagementsystem.controller;
 
 import com.saud.studentmanagementsystem.entity.Student;
 import com.saud.studentmanagementsystem.service.StudentService;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class StudentController {
 
-    private StudentService studentService;
+    private final StudentService studentService;
 
     public StudentController(StudentService studentService) {
         this.studentService = studentService;

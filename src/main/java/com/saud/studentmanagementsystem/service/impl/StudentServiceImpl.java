@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class StudentServiceImpl implements StudentService {
 
-    private StudentRespoitory studentRespoitory;
+    private final StudentRespoitory studentRespoitory;
 
     @Autowired
     public StudentServiceImpl(StudentRespoitory studentRespoitory) {
